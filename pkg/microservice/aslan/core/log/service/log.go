@@ -135,11 +135,12 @@ func GetCurrentContainerLogs(podName, containerName, envName, productName string
 	}
 
 	buf := new(bytes.Buffer)
-	err = containerlog.GetContainerLogs(envName,podName,containerName,false,tail,buf,clientSet)
+	err = containerlog.GetContainerLogs(envName, podName, containerName, false, tail, buf, clientSet)
 	if err != nil {
 		log.Errorf("containerlog.GetContainerLogs error: %v", err)
 		return "", err
 	}
+	fmt.Printf("just for test")
 	str := buf.String()
 	return str, nil
 }
