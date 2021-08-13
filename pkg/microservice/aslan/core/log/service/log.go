@@ -140,7 +140,6 @@ func GetCurrentContainerLogs(podName, containerName, envName, productName string
 		log.Errorf("containerlog.GetContainerLogs error: %v", err)
 		return "", err
 	}
-	fmt.Printf("just for test")
 	str := buf.String()
 	return str, nil
 }
